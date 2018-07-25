@@ -13,41 +13,40 @@ Kotlin是JVM和Android的实用编程语言，结合OO和功能特性，专注�
 
  （一）创建全新的Kotlin项目：
  在Android Studio里面创建新的项目，然后勾选下方的 Include Kotlin support
- ```
+
  <div>
   <img src = "/images/Kotlin_learn/create_Kotlin_pro.png" width = "370" height = "250">
  </div>
- ```
+
 
 创建成功之后，MainActivity的后缀名由.java变化成了.kt，然后里面的语法我在代码中做了注释：
-```
+
 <div>
   <img src = "/images/Kotlin_learn/MainActivity.png" width = "370" height = "250">
 </div>
-```
+
 
 那么gradle里面会自动添加以下依赖：
-```
+
 <div>
   <img src= "/images/Kotlin_learn/gradle.jpg" width="370" height = "250">
 </div>
-```
+
 
 （二）在java代码下转换为Kotlin模式
 
 选择Tools -> Kotlin -> Configure Kotlin Plugin Updates, 更新完插件后重新启动Android Studio
-```
+
 <div>
   <img src = "/iamges/Kotlin_learn/mode_change.png" width="300" height = "370">
 </div>
-```
 
 然后选中想要转换的.java文件，选择Code -> Convert Java File to Kotlin File 后变成.kt文件：
-```
+
 <div>
   <img src = "/images/Kotlin_learn/java_to_kotlin.png" width="250" height = "370">
 </div>
-```
+
 
 第一个Kotlin程序 —— Hello World：
 ```
@@ -61,12 +60,12 @@ fun main(args: Array<String>){
 
 ```
 这里我使用的编译环境是云平台：https://try.kotlinlang.org/
-```
+
 <div>
   <img src = "/images/Kotlin_learn/hello_world.png" width = "310" height = "370">
 
 </div>
-```
+
 下面我们进行一个稍微带逻辑的Kotlin函数代码：
 ```
 data class Person(val name :String, val age: Int? = null) //创建一个数据类Person
@@ -78,11 +77,11 @@ fun main(args: Array<String>){
 ```
 
 运行效果：
-```
+
 <div>
   <img src = "/images/Kotlin_learn/first_function.png" width="370" height="250">
 </div>
-```
+
 现在来分解这几句代码：
 1、首先创建一个带有两个参数的数据类Person，第一个参数是name，类型是不可变量 val String ，第二个参数是可为空的Int类型（Int?）age，意思是这里年龄可以为空值。
 
