@@ -84,7 +84,7 @@ fun main(args: Array<String>){
 </div>
 ```
 现在来分解这几句代码：
-1、首先创建一个带有两个参数的数据类，第一个参数是name，类型是不可变量 val String ，第二个参数是可为空的Int类型（Int?）age，意思是这里年龄可以为空值。
+1、首先创建一个带有两个参数的数据类Person，第一个参数是name，类型是不可变量 val String ，第二个参数是可为空的Int类型（Int?）age，意思是这里年龄可以为空值。
 
 2、fun main ()是顶层函数，相当于Java代码当中的static函数。
 
