@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Kotlin学习之在Android Studio里面相关环境的搭建"
+title: "Kotlin学习笔记（一）"
 date: 2018-7-24 17：13
 description: "在Android Studio里面使用Kotlin语言"
 tag: Android、Kotlin
