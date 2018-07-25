@@ -15,21 +15,21 @@ Kotlin是JVM和Android的实用编程语言，结合OO和功能特性，专注�
  在Android Studio里面创建新的项目，然后勾选下方的 Include Kotlin support
 
  <div>
-  <img src = "/images/Kotlin_learn/create_Kotlin_pro.png" width = "370" height = "250">
+  <img src = "/images/Kotlin_learn/create_Kotlin_pro.png" width = "926" height = "458">
  </div>
 
 
 创建成功之后，MainActivity的后缀名由.java变化成了.kt，然后里面的语法我在代码中做了注释：
 
 <div>
-  <img src = "/images/Kotlin_learn/MainActivity.png" width = "370" height = "250">
+  <img src = "/images/Kotlin_learn/MainActivity.png" width = "926" height = "458">
 </div>
 
 
 那么gradle里面会自动添加以下依赖：
 
 <div>
-  <img src= "/images/Kotlin_learn/gradle.jpg" width="370" height = "250">
+  <img src= "/images/Kotlin_learn/gradle.jpg" width="926" height = "458">
 </div>
 
 
@@ -79,7 +79,7 @@ fun main(args: Array<String>){
 运行效果：
 
 <div>
-  <img src = "/images/Kotlin_learn/first_function.png" width="370" height="250">
+  <img src = "/images/Kotlin_learn/first_function.png" width="926" height="458">
 </div>
 
 现在来分解这几句代码：
