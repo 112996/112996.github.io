@@ -13,7 +13,6 @@ fun main(args:Array<String>){
   println("Hello World!")
 }
 ```
-特性：
 
 (1)、fun 是一个关键词，用来声明一个函数；
 
@@ -32,8 +31,6 @@ fun max(a:Int, b:Int):Int{
 }
 println(max(1,2))
 ```
-特性：
-
 (1)、fun关键字声明一个名为max的函数，括号里面为参数列表，返回值类型以冒号为分隔符跟在参数列表后面
 
 (2)、if是一个带结果值的表达式(不是声明)，类似于Java中的三元操作符：（a>b）? a:b
@@ -80,7 +77,7 @@ languages.add("Kotlin") //引用指向可变的对象
 var num = 20
 num = "hello"  //错误:类型匹配错误
 ```
-5、自定义的获取器：
+
 6、声明枚举类（enum class）：
 ```
 enum class Color(
@@ -93,8 +90,6 @@ enum class Color(
   }
   println(Color.BLUE.rgb())
 ```
-特性：
-
 1、Kotlin中关键字较多，enum（或称为关键软词），
 
 2、如果在枚举类当中定义了任何方法，则必须使用 “;” 来将枚举常量列表从函数定义中间那个分隔开。
