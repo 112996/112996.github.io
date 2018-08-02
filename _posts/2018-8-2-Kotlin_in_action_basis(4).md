@@ -92,14 +92,14 @@ abstract class  Animated{     //这个类是抽的，不能创建它的实例
 ```
 类中的访问修饰符的含义：
 <div>
-  <img src = "images/Kotlin_learn/access_modifier.png" width= "786" height = "216"/>
+  <img src = "/images/Kotlin_learn/access_modifier.png" width= "786" height = "216"/>
 </div>
 注意：在接口中，不能使用final或者abstract，接口中的成员总是为open属性。
 
 3、可见性修饰符：默认是公开的（public）可见性修饰符有助于访问你的代码中的声明，通过限制类实现细节的可见性，可以确保你百变实现细节但不会有破坏依赖代码的风险。
 Kotlin可见性修饰符：
 <div>
-  <img src = "images/Kotlin_learn/visibility_modifier.png" width = "785" height = "192"/>
+  <img src = "/images/Kotlin_learn/visibility_modifier.png" width = "785" height = "192"/>
 </div>
 
 4、内部类和嵌套类（默认为嵌套）

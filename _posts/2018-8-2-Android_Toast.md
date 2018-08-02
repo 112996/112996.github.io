@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
 
 然后就直接可以在activity里面import
 <div>
-  <img src ="images/Kotlin_learn/import_anko.png" width = "660" height = "240"/>
+  <img src ="/images/Kotlin_learn/import_anko.png" width = "660" height = "240"/>
 </div>
 就可以直接使用：
 ```
