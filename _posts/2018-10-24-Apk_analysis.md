@@ -31,22 +31,22 @@ classes.dex/classes2.dex：编译后的字节码文件，能够被Dalvik/ART理�
 第二步：得到AndroidManifest.XML文件
 保证上面所用软件都安装好的情况下，在apk所在文件路径下打开命令行窗口，输入命令：
 <div>
-  <img src = "/images/android_reverse/apktool_apk.png" width="720" height="270" />
+  <img src = "/images/android_reverse/apktool_apk.png" width="616" height="136" />
 </div>
 
 那么我们就得到了一个新的文件：
 <div>
-  <img src = "/images/android_reverse/apktool_finish.png" width="720" height="270" />
+  <img src = "/images/android_reverse/apktool_finish.png" width="754" height="279" />
 </div>
 
 下面打开新得到的文件：
 <div>
-  <img src = "/images/android_reverse/buka.png" width="720" height="270" />
+  <img src = "/images/android_reverse/buka.png" width="658" height="304" />
 </div>
 
 我使用Notepad++打开AndroidManifest.xml文件：
 <div>
-  <img src = "/images/android_reverse/androidmanifest.png" width="720" height="270" />
+  <img src = "/images/android_reverse/androidmanifest.png" width="1000" height="567" />
 </div>
 这样我们就可以看到布卡漫画这个应用的清单文件了，可以看到里面的那个是启动activity，这个应用所申请的权限等等，当然我们对一个apk的安全性测试也包括权限是否得当。
 
@@ -61,14 +61,14 @@ classes.dex/classes2.dex：编译后的字节码文件，能够被Dalvik/ART理�
 4、3操作后我们看到Dex2Jar-2.0文件目录下多了classes-dex2jar.jar、classes2-dex2jar.jar两个文件
 5、通过工具JD_GUI_windows-1.4.0打开classes-dex2jar.jar、classes2-dex2jar.jar文件
 <div>
-  <img src = "/images/android_reverse/jd-gui_java_code.png" width="720" height="270" />
+  <img src = "/images/android_reverse/jd-gui_java_code.png" width="749" height="204" />
 </div>
 当然我们可以看到这里的代码是经过Android Studio混淆打包的，很多都是以简易字符替换。
 
 第四步：对APK进行安全检测
 我们通过第二步得到的AndroidManifest.xml查看到应用的入口activity是cn.ibuka.manga.ui.ActivityStartup：
 <div>
-  <img src = "/images/android_reverse/enter_activity.png" width="720" height="270" />
+  <img src = "/images/android_reverse/enter_activity.png" width="1076" height="175" />
 </div>
  同时我们看到 application里面 android:allowBackup="true"，这个属性设置为true将会有很大的问题，外部可以通过adb backup 或者abd restore 进行备份。所以安全起见，allowBackup应设置为false。
 
@@ -77,17 +77,17 @@ classes.dex/classes2.dex：编译后的字节码文件，能够被Dalvik/ART理�
  2、将Drozer里面的agent.apk安装到手机或者模拟器上。
  3、通过adb进入模拟器的root权限下：
  <div>
-   <img src = "/images/android_reverse/adb_shell.png" width="720" height="270" />
+   <img src = "/images/android_reverse/adb_shell.png" width="628" height="253" />
  </div>
 4、打开终端上的agent.apk，并开启：
 <div>
-  <img src = "/images/android_reverse/agent.png" width="720" height="270" />
+  <img src = "/images/android_reverse/agent.png" width="333" height="581" />
 </div>
 5、我们去到Drozer目录下，打开命令行窗口，通过命令adb forward tcp:31415 tcp:31415，./drozer.bat console connect去连接终端：
 <div>
-  <img src = "/images/android_reverse/enter_drozer.png" width="720" height="270" />
+  <img src = "/images/android_reverse/enter_drozer.png" width="742" height="406" />
 </div>
 6、我们先查看布卡漫画APK的攻击面，使用的命令是 run app.apckage.attacksurface 包名
 <div>
-  <img src = "/images/android_reverse/attacksurface.png" width="720" height="270" />
+  <img src = "/images/android_reverse/attacksurface.png" width="720" height="220" />
 </div>
