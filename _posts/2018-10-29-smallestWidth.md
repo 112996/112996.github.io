@@ -29,7 +29,7 @@ values-sw360dp文件夹下，dimens.xml的生成原理
 
 最小宽度基准值:
 
-    需要把设备的屏幕宽度分为多少份。假设把项目的最小宽度基准值定为360，那么就会在dimens.xml文件中生成1到360的dimens引用，例如values-sw360dp文件夹中的dimens.xml：
+需要把设备的屏幕宽度分为多少份。假设把项目的最小宽度基准值定为360，那么就会在dimens.xml文件中生成1到360的dimens引用，例如values-sw360dp文件夹中的dimens.xml：
 ```
 <resource>
     <dimen name = "dp_1">1dp</dimen>
@@ -38,7 +38,7 @@ values-sw360dp文件夹下，dimens.xml的生成原理
 </resource>
 
 ```
-    当我们将最小宽度基准值定为360，values-sw400dp中的dimens.xml：
+当我们将最小宽度基准值定为360，values-sw400dp中的dimens.xml：
 ```
 <resource>
     <dimen name = "dp_1">1.1111dp</dimen>
