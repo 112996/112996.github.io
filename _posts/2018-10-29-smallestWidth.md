@@ -36,7 +36,6 @@ values-sw360dp文件夹下，dimens.xml的生成原理
          ......
     <dimen name = "dp_360">360dp</dimen>
 </resource>
-
 ```
 当我们将最小宽度基准值定为360，values-sw400dp中的dimens.xml：
 ```
