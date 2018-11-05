@@ -65,38 +65,42 @@ AI与启动方式的关系：
 
 如何对启动时间进行量化?
 
-    通过shell命令
-    ```
-    adb shell am start -W [packageName]/[packageName. MainActivity]
-    ```
-    执行成功后会返回三个测量到的时间：
+  通过shell命令
 
-    ThisTime:一般和TotalTime时间一样，除非在应用启动时开了一个透明的Activity预先处理一些事再显示出主Activity，这样将比TotalTime小。
+  ```
+  adb shell am start -W [packageName]/[packageName. MainActivity]
+  ```
+执行成功后会返回三个测量到的时间：
 
-    TotalTime:应用的启动时间，包括创建进程+Application初始化+Activity初始化到界面显示。
+ThisTime:一般和TotalTime时间一样，除非在应用启动时开了一个透明的Activity预先处理一些事再显示出主Activity，这样将比TotalTime小。
 
-    WaitTime:一般比TotalTime大点，包括系统影响的耗时。
+TotalTime:应用的启动时间，包括创建进程+Application初始化+Activity初始化到界面显示。
+
+WaitTime:一般比TotalTime大点，包括系统影响的耗时。
 
 Application onCreate()优化
 
-    1、第三方SDK初始化的处理:
+  1、第三方SDK初始化的处理:
 
-    Application是程序的主入口，很多三方SDK示例程序中都要求自己在Application OnCreate时做初始化操作。这就是增加Application OnCreate时间的主要元凶，所以需要尽量避免在Application onCreate时同步做初始化操作。比较好的解决方案就是对三方SDK就行懒加载，不在Application OnCreate()时初始化，在真正用到的时候再去加载。
-    下面实例对比下ImageLoader在采用懒加载后启动速度优化。
-    <div>
-      <img src="/images/app_start-up/application.png" width="884" height="295">
-    </div>
+  Application是程序的主入口，很多三方SDK示例程序中都要求自己在Application OnCreate时做初始化操作。这就是增加Application OnCreate时间的主要元凶，所以需要尽量避免在Application onCreate时同步做初始化操作。比较好的解决方案就是对三方SDK就行懒加载，不在Application OnCreate()时初始化，在真正用到的时候再去加载。
 
-    然后我们检查应用启动时间，每次执行命令时需要杀死进程：
-    <div>
-      <img src="/images/app_start-up/application_time.png" width="1083" height="230">
-    </div>
+  下面实例对比下ImageLoader在采用懒加载后启动速度优化。
 
-    当我们封装一个懒加载ImageLoader的工具类后，可以明显看到应用启动时间的缩短。所以，在Applocation onCreate()方法中，避免在主线程做大量耗时操作，跟I/O有关的逻辑操作都会对应用的启动时间产生极大的影响。
+<div>
+  <img src="/images/app_start-up/application.png" width="884" height="295">
+</div>
+
+然后我们检查应用启动时间，每次执行命令时需要杀死进程：
+
+<div>
+  <img src="/images/app_start-up/application_time.png" width="1083" height="230">
+</div>
+
+当我们封装一个懒加载ImageLoader的工具类后，可以明显看到应用启动时间的缩短。所以，在Applocation onCreate()方法中，避免在主线程做大量耗时操作，跟I/O有关的逻辑操作都会对应用的启动时间产生极大的影响。
 
 Activity onCreate()优化：
 
-  减少LaunchActivity的View层级，减少View测量绘制时间。避免主线程做耗时操作。
+减少LaunchActivity的View层级，减少View测量绘制时间。避免主线程做耗时操作。
 
 1、用户体验优先
   消除启动时的白屏或黑屏：
