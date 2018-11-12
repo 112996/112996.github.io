@@ -44,9 +44,11 @@ TaskAffinity
 <div>
   <img src = "/images/LaunchMode/manifest.png" width="720" height="500">
 </div>
+
 <div>
   <img src = "/images/LaunchMode/mainActivity.png" width="773" height="438">
 </div>
+
 <div>
   <img src = "/images/LaunchMode/log1.png" width="844" height="428">
 </div>
@@ -58,10 +60,12 @@ TaskAffinity
 <div>
   <img src = "/images/LaunchMode/manifest2.png" width="720" height="500">
 </div>
+
 <div>
   <img src = "/images/LaunchMode/log2.png" width="844" height="428">
 </div>
-这里可以看到SecondActivity的TaskId改变了，启动Activity的时候会根据taskAffinity查找是否有存在的任务栈，没有的话就创建一个新的任务栈。同时在启动ThirdActivity，也会加入到当前的任务栈中。
+
+这里可以看到Num2Activity的TaskId改变了，启动Activity的时候会根据taskAffinity查找是否有存在的任务栈，没有的话就创建一个新的任务栈。同时在启动Num3Activity，也会加入到当前的任务栈中。
 
 实验三：
 
@@ -69,12 +73,14 @@ TaskAffinity
 <div>
   <img src = "/images/LaunchMode/manifest3.png" width="720" height="500">
 </div>
+
 <div>
   <img src = "/images/LaunchMode/log3.png" width="844" height="428">
 </div>
-可以看到SecondActivity是创建在新的栈里，而ThirdActivity却还是创建在原来的栈里面，这是因为singleInstance的特性造成的，它会创建一个新的栈并且里边就只有一个Activity实例，所以和singTask不同，之后启动的ThirdActivity不会进入到该栈中。
 
-其实这里SecondActivity中设置的taskAffinity是没意义的，就算不设置结果也是一样的，因为singleInstance会创建一个新的栈并只能保存唯一的Activity，所以其他的Activity就算设置了一样的taskAffinity也不起作用了。
+可以看到Num2Activity是创建在新的栈里，而Num3Activity却还是创建在原来的栈里面，这是因为singleInstance的特性造成的，它会创建一个新的栈并且里边就只有一个Activity实例，所以和singTask不同，之后启动的Num3Activity不会进入到该栈中。
+
+其实这里Num2Activity中设置的taskAffinity是没意义的，就算不设置结果也是一样的，因为singleInstance会创建一个新的栈并只能保存唯一的Activity，所以其他的Activity就算设置了一样的taskAffinity也不起作用了。
 
 这里讲一下启动过程：
 MainActivity(62栈进入前台) -->Num2Activity(63栈进入前台，62栈进入后台) --> Num3Activity(62栈进入前台，63栈进入后台)  
