@@ -69,6 +69,7 @@ AI与启动方式的关系：
 
   ```
   adb shell am start -W [packageName]/[packageName. MainActivity]
+  
   ```
 执行成功后会返回三个测量到的时间：
 
