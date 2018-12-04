@@ -4,14 +4,13 @@ title: "Android之混淆"
 date: 2018-12-4 20:17
 description: "Android之混淆"
 tag: Kotlin
----
 一、基本概念
 混淆，字面上来说就是把项目中的包名、类名、方法名和变量名等进行更改，用来迷惑别人。但是实际上混淆包含了代码压缩、优化、校验等过程，把混淆称作ProGuard更加合适。
 
 ProGuard就是Java对Class文件进行“混淆”的工具。
 
 <div>
-  <img src = "/images/Android_ProGuar/proguard.png" width="675" height="168">
+  <img src = "/images/Android_ProGuard/proguard.png" width="675" height="168">
 </div>
 这个图就好比设计模式中的责任链模式。下面我们解释以下名词：
 1、shrink（压缩）：ProGuard会递归地确定哪些类和类成员被使用，而其他的则被丢弃。
@@ -47,15 +46,15 @@ android{
 
 1、保留类和类成员
 <div>
-  <img src = "/images/Android_ProGuar/keepclass.png" width="748" height="138">
+  <img src = "/images/Android_ProGuard/keepclass.png" width="748" height="138">
 </div>
 2、类成员中的一些符号
 <div>
-  <img src = "/images/Android_ProGuar/symbol.png" width = "680" height = "180">
+  <img src = "/images/Android_ProGuard/symbol.png" width = "680" height = "180">
 </div>
 3、一些常用通配符
 <div>
-  <img src = "/images/Android_ProGuar/wildcard.png" width = "" height ="">
+  <img src = "/images/Android_ProGuard/wildcard.png" width = "" height ="">
 </div>
 其他有需要的话可以自行查询。
 
@@ -183,7 +182,7 @@ android{
 当遇到混淆问题时，通常需要通过查看mapping.txt文件来分析原因。
 如果在进行Crash追踪中遇到可困难，可以使用sdk目录下/tools/proguard/bin中的progurardgui.bat可视化工具进行混淆定位。
 <div>
-  <img src = "imags/Android_ProGuar/proguardgui_bat.png" width = "963" height = "653">
+  <img src = "imags/Android_ProGuard/proguardgui_bat.png" width = "963" height = "653">
 </div>
 
 六、混淆引发过的问题
