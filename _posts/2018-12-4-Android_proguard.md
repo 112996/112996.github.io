@@ -14,10 +14,15 @@ ProGuard就是Java对Class文件进行“混淆”的工具。
   <img src = "/images/Android_ProGuard/proguard.png" width="675" height="168">
 </div>
 这个图就好比设计模式中的责任链模式。下面我们解释以下名词：
+
 1、shrink（压缩）：ProGuard会递归地确定哪些类和类成员被使用，而其他的则被丢弃。
+
 2、optimize（优化）：ProGuard会进一步分析和优化方法。比如一些无用的参数会被丢弃，一些方法会做内联。
+
 3、obfuscate（混淆）：这个过程就是进行重命名，把原来包含注释意义的类名、方法名等进行无意义的重命名。
+
 4、preverify（预校验）：这个步骤就是将预校验信息添加到类中。
+
 这四个步骤都是可选的，当然Android中一般情况下我们都会保留前三个步骤，而忽略preverify过程，这样可以加快混淆速度。
 
 二、Android中的ProGuard
@@ -183,7 +188,7 @@ android{
 当遇到混淆问题时，通常需要通过查看mapping.txt文件来分析原因。
 如果在进行Crash追踪中遇到可困难，可以使用sdk目录下/tools/proguard/bin中的progurardgui.bat可视化工具进行混淆定位。
 <div>
-  <img src = "imags/Android_ProGuard/proguardgui_bat.png" width = "963" height = "653">
+  <img src = "/images/Android_ProGuard/proguardgui_bat.png" width = "963" height = "653">
 </div>
 
 六、混淆引发过的问题
